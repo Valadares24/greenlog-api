@@ -2,12 +2,14 @@ package com.greenlog.greenlog_solutions_api.dto;
 
 import lombok.Value;
 import java.util.List;
+import java.util.Set;
 
-@Value // Gera construtor com todos os argumentos (AllArgsConstructor)
+@Value
 public class RotaResponse {
-    String bairroOrigem;
-    String bairroDestino;
-    List<String> caminhoBairros; // Sequência de bairros no menor caminho
-    double distanciaTotalKm; // Distância total calculada
-    String status; // Ex: "SUCESSO", "INACESSÍVEL"
+    Long id;
+    String nome;
+    String caminhaoPlacaDesignada;
+    double distanciaTotalKm; // Este valor é calculado, não recebido.
+    List<String> bairrosVisitados;
+    Set<String> tiposResiduosAtendidos;
 }
