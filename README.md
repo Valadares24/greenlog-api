@@ -1,59 +1,75 @@
-# GreenlogFrontend
+<img width="1160" height="610" alt="image" src="https://github.com/user-attachments/assets/b890ee5b-d9b5-46f8-a767-7c77b578d519" />
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.2.
 
-## Development server
+<img width="1312" height="544" alt="image" src="https://github.com/user-attachments/assets/5953da87-8819-4772-8970-a78bda611134" />
 
-To start a local development server, run:
 
-```bash
-ng serve
-```
+<img width="1186" height="520" alt="image" src="https://github.com/user-attachments/assets/2985c4a8-eb7a-46bb-b939-ab4ac04e2ac7" />
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+**Relatorio de custos de hospedagem em nuvem** 
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+https://docs.google.com/document/d/1064hSRtt6r411wAkM-TDHYoV75ksE9ZWMTiQMYHi9Jk/edit?usp=sharing
 
-```bash
-ng generate component component-name
-```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
 
-```bash
-ng generate --help
-```
+Com certeza. Utilizar 5 padrões de projeto em um trabalho acadêmico de software é um ótimo diferencial.
 
-## Building
+Aqui está o resumo conciso e objetivo dos 5 padrões de projeto utilizados no seu sistema, focando no propósito e na aplicação específica no GreenLog Solutions.
 
-To build the project run:
+5 Padrões de Projeto (Design Patterns) - Resumo Objetivo
+1. Singleton (Criacional)
+Propósito: Garantir que uma classe tenha apenas uma instância e fornecer um ponto de acesso global a ela.
 
-```bash
-ng build
-```
+Aplicação no Projeto: Aplicado em CalculoRotaService.java.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Função: Evita que o complexo Grafo da Cidade (estrutura de dados da malha viária) seja recarregado ou reconstruído do zero a cada requisição de rota, otimizando o desempenho do algoritmo de Dijkstra.
 
-## Running unit tests
+2. Repository (Estrutural/Arquitetural)
+Propósito: Abstrair a camada de acesso a dados e isolar a lógica de persistência do domínio (regras de negócio).
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Aplicação no Projeto: Implementado em interfaces como RotaRepository.java.
 
-```bash
-ng test
-```
+Função: Permite que a camada de serviço trabalhe com objetos de domínio (Rota) sem ter conhecimento dos detalhes da tecnologia de banco de dados (JPA, SQL, etc.).
 
-## Running end-to-end tests
+3. DTO (Data Transfer Object) (Estrutural)
+Propósito: Encapsular e transportar dados entre subsistemas (Front-end e Back-end) em uma única chamada.
 
-For end-to-end (e2e) testing, run:
+Aplicação no Projeto: Classes como RotaResponse.java e RotaRequest.java.
 
-```bash
-ng e2e
-```
+Função: Garante a segurança ao evitar a exposição direta das Entidades JPA e otimiza o tráfego de rede, enviando apenas os dados necessários para a tela.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+4. Strategy (Comportamental)
+Propósito: Definir uma família de algoritmos, encapsular cada um deles e torná-los intercambiáveis.
 
-## Additional Resources
+Aplicação no Projeto: Aplicado ao método de busca de caminho em CalculoRotaService.calcularMenorRota().
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Função: O algoritmo de Dijkstra é encapsulado como uma estratégia de roteamento. A arquitetura permite que, futuramente, ele possa ser substituído por outro algoritmo (ex: A*) sem alterar as classes que o utilizam.
+
+5. Factory Method (Criacional)
+Propósito: Centralizar a lógica complexa de criação de um objeto, delegando a responsabilidade de instanciação para um método específico.
+
+Aplicação no Projeto: Utilizado em métodos como RotaService.mapToEntity().
+
+Função: Encapsula a lógica de montagem da Entidade Rota, garantindo que o objeto seja criado com todos os atributos obrigatórios (incluindo o cálculo da distância total) antes de ser persistido.
+
+
+
+**Diagramas de LR*
+
+
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/b38a327a-8035-45fe-9137-f168c96cd7a5" />
+
+
+<img width="720" height="1280" alt="image" src="https://github.com/user-attachments/assets/84744eee-ef95-4d1b-9000-53e5afa0f23c" />
+
+
+Tabelas 
+AF identificador de placa(regex)
+
+<img width="639" height="175" alt="image" src="https://github.com/user-attachments/assets/6e8204a6-f7fc-4624-ba46-b51966a756d6" />
+
+<img width="577" height="185" alt="image" src="https://github.com/user-attachments/assets/e2b58312-ac8d-4dee-bbfe-1312bd9cb95f" />
+
+
+<img width="557" height="190" alt="image" src="https://github.com/user-attachments/assets/0eea6161-6738-4188-afcd-feb653a9aec4" />
