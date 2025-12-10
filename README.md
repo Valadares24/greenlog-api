@@ -13,11 +13,8 @@ https://docs.google.com/document/d/1064hSRtt6r411wAkM-TDHYoV75ksE9ZWMTiQMYHi9Jk/
 
 
 
-Com certeza. Utilizar 5 padrões de projeto em um trabalho acadêmico de software é um ótimo diferencial.
 
-Aqui está o resumo conciso e objetivo dos 5 padrões de projeto utilizados no seu sistema, focando no propósito e na aplicação específica no GreenLog Solutions.
-
-5 Padrões de Projeto (Design Patterns) - Resumo Objetivo
+5 Padrões de Projeto (Design Patterns) 
 1. Singleton (Criacional)
 Propósito: Garantir que uma classe tenha apenas uma instância e fornecer um ponto de acesso global a ela.
 
