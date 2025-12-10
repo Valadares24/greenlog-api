@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CaminhaoCrudComponent } from './caminhao-crud';
+import { RotaFormComponent } from './rota-form.component';
 
-describe('CaminhaoCrud', () => {
-  let component: CaminhaoCrudComponent;
-  let fixture: ComponentFixture<CaminhaoCrudComponent>;
+describe('RotaFormComponent', () => {
+  let component: RotaFormComponent;
+  let fixture: ComponentFixture<RotaFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CaminhaoCrudComponent]
+      imports: [RotaFormComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CaminhaoCrudComponent);
+    fixture = TestBed.createComponent(RotaFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

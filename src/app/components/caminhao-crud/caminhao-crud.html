@@ -1,1 +1,103 @@
-<p>caminhao-crud works!</p>
+<div class="container mt-4">
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h2><i class="bi bi-truck text-success me-2"></i>Gerenciamento de Caminhões</h2>
+    <button class="btn btn-success" (click)="iniciarEdicao()">
+      <i class="bi bi-plus-lg"></i> Novo Caminhão
+    </button>
+  </div>
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-body p-0">
+      <table class="table table-striped table-hover mb-0">
+        <thead class="table-dark">
+          <tr>
+            <th>Placa</th>
+            <th>Modelo</th>
+            <th>Capacidade (Kg)</th>
+            <th>Status</th>
+            <th class="text-center">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of caminhoes">
+            <td class="fw-bold">{{ c.placa }}</td>
+            <td>{{ c.modelo }}</td> <td>{{ c.capacidadeCargaKg }}</td>
+            <td>
+              <span class="badge" 
+                    [class.bg-success]="c.status === 'DISPONIVEL'"
+                    [class.bg-warning]="c.status === 'EM_ROTA'"
+                    [class.bg-danger]="c.status === 'MANUTENCAO'">
+                {{ c.status }}
+              </span>
+            </td>
+            <td class="text-center">
+              <button class="btn btn-sm btn-outline-primary me-2" (click)="preencherFormulario(c)">
+                <i class="bi bi-pencil"></i>
+              </button>
+              <button class="btn btn-sm btn-outline-danger" (click)="deleteCaminhao(c.placa)">
+                <i class="bi bi-trash"></i>
+              </button>
+            </td>
+          </tr>
+          <tr *ngIf="caminhoes.length === 0">
+            <td colspan="5" class="text-center py-3 text-muted">Nenhum caminhão cadastrado.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card shadow-sm border-success">
+    <div class="card-header bg-success text-white">
+      <h5 class="mb-0">
+        {{ isEditando ? 'Editar Caminhão' : 'Novo Caminhão' }}
+      </h5>
+    </div>
+    
+    <div class="card-body">
+      <form [formGroup]="caminhaoForm" (ngSubmit)="onSubmit()">
+        
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <label class="form-label fw-bold">Placa</label>
+            <input type="text" class="form-control" formControlName="placa" 
+                   [readonly]="isEditando" placeholder="ABC1D23" maxlength="7"
+                   style="text-transform: uppercase;">
+          </div>
+
+          <div class="col-md-4 mb-3">
+            <label class="form-label fw-bold">Modelo</label>
+            <input type="text" class="form-control" formControlName="modelo" required>
+          </div>
+
+          <div class="col-md-3 mb-3">
+            <label class="form-label fw-bold">Capacidade (Kg)</label>
+            <input type="number" class="form-control" formControlName="capacidadeCargaKg" required>
+          </div>
+
+          <div class="col-md-2 mb-3">
+            <label class="form-label fw-bold">Status</label>
+            <select class="form-select" formControlName="status">
+              <option value="DISPONIVEL">Disponível</option>
+              <option value="EM_ROTA">Em Rota</option>
+              <option value="MANUTENCAO">Manutenção</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end gap-2">
+           <button type="button" class="btn btn-secondary" (click)="cancelarEdicao()">
+             Cancelar
+           </button>
+           
+           <button type="submit" class="btn btn-success" [disabled]="caminhaoForm.invalid || isSubmitting">
+             Salvar
+           </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</div>

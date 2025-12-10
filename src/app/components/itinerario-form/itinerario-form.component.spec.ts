@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CaminhaoCrudComponent } from './caminhao-crud';
+import { ItinerarioFormComponent } from './itinerario-form.component';
 
-describe('CaminhaoCrud', () => {
-  let component: CaminhaoCrudComponent;
-  let fixture: ComponentFixture<CaminhaoCrudComponent>;
+describe('ItinerarioFormComponent', () => {
+  let component: ItinerarioFormComponent;
+  let fixture: ComponentFixture<ItinerarioFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CaminhaoCrudComponent]
+      imports: [ItinerarioFormComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CaminhaoCrudComponent);
+    fixture = TestBed.createComponent(ItinerarioFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

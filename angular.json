@@ -21,6 +21,9 @@
                 "input": "public"
               }
             ],
+            "scripts": [
+                  "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
             "styles": [
               "src/styles.css"
             ],
@@ -56,6 +59,10 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "buildTarget": "greenlog-frontend:build",
+            "port": 4200
+          },
           "configurations": {
             "production": {
               "buildTarget": "greenlog-frontend:build:production"
@@ -88,6 +95,6 @@
     }
   },
   "cli": {
-    "analytics": "835a7dd2-220e-4060-bdf3-59845c4460c1"
+    "analytics": false
   }
 }

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CaminhaoCrudComponent } from './caminhao-crud';
+import { RotaListComponent } from './rota-list.component';
 
-describe('CaminhaoCrud', () => {
-  let component: CaminhaoCrudComponent;
-  let fixture: ComponentFixture<CaminhaoCrudComponent>;
+describe('RotaList', () => {
+  let component: RotaListComponent;
+  let fixture: ComponentFixture<RotaListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CaminhaoCrudComponent]
+      imports: [RotaListComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CaminhaoCrudComponent);
+    fixture = TestBed.createComponent(RotaListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
